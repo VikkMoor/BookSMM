@@ -16,7 +16,9 @@ class ImageGenerator:
 
         image_data = base64.b64decode(response.data[0].b64_json)
 
-        with open("generated_image.png", "wb") as image_file:
+        image_path = "generated_image.png"
+
+        with open(image_path, "wb") as image_file:
             image_file.write(image_data)
 
-        return "generated_image.png"
+        return image_path
