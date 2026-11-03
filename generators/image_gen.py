@@ -21,4 +21,6 @@ class ImageGenerator:
         with open(image_path, "wb") as image_file:
             image_file.write(image_data)
 
+        print("Размер изображения:", len(image_data), "байт")
+
         return image_path

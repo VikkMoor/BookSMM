@@ -28,6 +28,12 @@ class VKPublisher:
                 files={"photo": image_file}
             ).json()
 
+            print("Ответ сервера загрузки:")
+            print("Server:", upload_response.get("server"))
+            print("Hash:", upload_response.get("hash"))
+            print("Photo:", repr(upload_response.get("photo")))
+            print("Тип Photo:", type(upload_response.get("photo")))
+
         if "error" in upload_response:
             raise Exception(upload_response["error"])
 
